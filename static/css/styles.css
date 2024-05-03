@@ -1,20 +1,18 @@
 /* Root Variables */
 :root {
     --primary-bg: #fff;
-    --secondary-bg: #fff;
-    --primary-text: #211f1d;
-    --secondary-text: #111;
-    --link-color: #b37c56;
+    --primary-text: #353d49;
+    --secondary-text: #252627;
+    --link-color: #879094;
     --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-bg: #111;
-        --secondary-bg: #222;
+        --primary-bg: #252627;
         --primary-text: #fff;
-        --secondary-text: rgb(192, 186, 178);
-        --link-color: #ddc6a9;
+        --secondary-text: #fefefe;
+        --link-color: #dce4e6;
     }
     img {
         opacity: 90%;
@@ -46,11 +44,16 @@ body {
     color: var(--secondary-text);
     min-height: 100vh;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 a, a:visited {
     color: var(--link-color);
     text-decoration: none;
+}
+
+details {
+    padding: 0.5rem 0;
 }
 
 ul {
@@ -326,4 +329,25 @@ footer .logo p {
     nav ul li {
         margin-left: 1rem;
     }
+}
+
+/* Base style for code blocks */
+pre {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+pre {
+    padding: 1em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+code {
+    padding: 0.2em 0.4em;
+}
+
+pre {
+    transition: all 0.3s ease-in-out;
 }

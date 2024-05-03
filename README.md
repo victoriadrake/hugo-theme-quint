@@ -22,7 +22,7 @@ For a step-by-step guide to creating a new site with Hugo, read the [Quick start
 With Hugo installed, add Quint to your site's themes directory:
 
 ```bash
-cd your-site-directory
+cd yoursite
 git submodule add git@github.com:victoriadrake/hugo-theme-quint.git themes/quint
 ```
 
@@ -42,7 +42,11 @@ theme = "quint"
 theme: "quint"
 ```
 
-### Step 3: Update Your Site
+### Step 3: Configure
+
+Quint looks great out-of-the-box. Optionally, copy configuration values from `yoursite/themes/quint/hugo.toml` to your site's configuration (`yoursite/hugo.toml`) to personalize Quint further.
+
+### Step 4: Run the Server
 
 Run Hugo to generate your site and start up the server:
 

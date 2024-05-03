@@ -9,20 +9,20 @@ numImages = 10                      # Number of random images to choose from for
 
 [[params.social]]                   # Customize your social links below!
     url = "https://twitter.com"
-    icon = "social/twitter.svg"
+    icon = "/social/twitter.svg"
     name = "Twitter"
 
 [[params.social]]
     url = "https://x.com"
-    icon = "social/x.svg"
+    icon = "/social/x.svg"
     name = "X"
 
 [[params.social]]
     url = "mailto:me"
-    icon = "social/email.png"
+    icon = "/social/email.png"
     name = "Email"
 
 [[params.social]]
     url = "https://instagram.com"
-    icon = "social/instagram.svg"
+    icon = "/social/instagram.svg"
     name = "Instagram"
