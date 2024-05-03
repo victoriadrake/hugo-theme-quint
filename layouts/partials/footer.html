@@ -1,0 +1,21 @@
+<footer>
+    <div class="social-media">
+        {{ range site.Params.social}}
+        <a href="{{ .url }}"><img src="{{ .icon }}" alt="{{ .name }}"></a>
+        {{ end }}
+    </div>
+    <div class="logo">
+        <a href="{{ .Site.Home.Permalink }}">
+            <img src="/images/logo.png" alt="Site Logo">
+        </a>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+    </div>
+    <nav>
+        <ul>
+            {{- range site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{- end }}
+        </ul>
+    </nav>
+    {{ partial "search-index.html" . }}
+</footer>

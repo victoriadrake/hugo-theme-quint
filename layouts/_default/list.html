@@ -1,0 +1,32 @@
+{{ define "main" }}
+    <section class="hero">
+        <h1>{{ .Title }}</h1>
+        {{ partial "search.html" . }}
+    </section>
+    <main>
+        <p>{{ .Content }}</p>
+        <ul>
+            {{ $paginator := .Paginate (.Pages) }}
+            {{ partial "cards" . }}
+            <!-- Pagination links -->
+            {{ if gt $paginator.TotalPages 1 }}
+                <div class="pagination">
+                    {{ if $paginator.HasPrev }}
+                        <a href="{{ $paginator.Prev.URL }}">before</a>
+                    {{ else }}
+                        <p></p>
+                    {{ end }}
+                    <div class="pages">
+                        {{ range $paginator.Pagers }}
+                            <a href="{{ .URL }}"{{ if eq . $paginator }} class="active"{{ end }}>{{ .PageNumber }}</a>
+                        {{ end }}
+                    </div>
+                    {{ if $paginator.HasNext }}
+                        <a href="{{ $paginator.Next.URL }}">more</a>
+                    {{ else }}
+                        <p></p>
+                    {{ end }}
+                </div>
+            {{ end }}
+        </main>
+    {{ end }}

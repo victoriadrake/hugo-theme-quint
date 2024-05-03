@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="search">
+        <h1>Search {{ .Site.Title }}</h1>
+        {{ partial "search.html" . }}
+    </div>
+</section>
+<main class="post">
+    <ul id="results" class="search-results">
+        <li>
+        </li>
+    </ul>
+</main>
+{{ end }}
