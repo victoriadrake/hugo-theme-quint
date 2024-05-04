@@ -26,7 +26,7 @@ For a step-by-step guide to creating a new site with Hugo, read the [Quick start
 With Hugo installed, add Quint to your site's themes directory. From your site root, run:
 
 ```bash
-git submodule add git@github.com:victoriadrake/hugo-theme-quint.git themes/quint
+git submodule add https://github.com/victoriadrake/hugo-theme-quint.git themes/quint
 ```
 
 ### Step 2: Add the Theme to Your Configuration
