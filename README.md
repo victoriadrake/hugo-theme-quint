@@ -1,6 +1,6 @@
 # Quint: Essence of Minimalism
 
-![Quint screenshot](images/mock.png)
+![Quint screenshot](https://github.com/victoriadrake/hugo-theme-quint/blob/master/images/mock.png?raw=true)
 
 Quint is a minimalist Hugo theme designed to evoke a clean, airy feel, emphasizing clarity and ease of reading. It features elegant built-in image banners and a lightweight design, making it ideal for displaying your content center stage.
 
