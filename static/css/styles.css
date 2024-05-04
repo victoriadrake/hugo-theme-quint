@@ -12,7 +12,7 @@
         --primary-bg: #252627;
         --primary-text: #fff;
         --secondary-text: #fefefe;
-        --link-color: #dce4e6;
+        --link-color: #9fb1b6;
     }
     img {
         opacity: 90%;
@@ -50,6 +50,12 @@ body {
 a, a:visited {
     color: var(--link-color);
     text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: var(--primary-text);
 }
 
 details {

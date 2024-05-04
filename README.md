@@ -1,6 +1,8 @@
 # Quint: Essence of Minimalism
 
-![Quint screenshot](images/tn.png)Quint is a minimalist Hugo theme designed to evoke a clean, airy feel, emphasizing clarity and ease of reading. It features elegant built-in image banners and a lightweight design, making it ideal for displaying your content center stage.
+![Quint screenshot](images/mock.png)
+
+Quint is a minimalist Hugo theme designed to evoke a clean, airy feel, emphasizing clarity and ease of reading. It features elegant built-in image banners and a lightweight design, making it ideal for displaying your content center stage.
 
 ## Features
 
@@ -55,6 +57,14 @@ hugo server
 
 Navigate to `http://localhost:1313` in your web browser to see your site in action with the Quint theme.
 
+### Get Updates
+
+To download the latest version of Quint, run:
+
+```bash
+git submodule update --remote themes/quint
+```
+
 ## Customizing
 
 Quint is designed to be simple to customize. Add your own custom CSS files easily by naming them in your Hugo config:
@@ -92,3 +102,8 @@ Want some ideas to get started? Here's a quick list of features I'd love to see 
 ## License
 
 This theme is released under the MIT License. For more details, see the LICENSE file.
+
+## Attribution
+
+- Quint uses the excellent [Open Sauce Font](https://github.com/marcologous/Open-Sauce-Fonts).
+- Device mockup created from [deviceframes.com](https://deviceframes.com/templates/iphone-13).
