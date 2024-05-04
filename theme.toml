@@ -1,11 +1,11 @@
 name = "Quint"
 license = "MIT"
 licenselink = "https://github.com/victoriadrake/hugo-theme-quint/blob/master/LICENSE"
-description = "Quint: Essence of Minimalism."
+description = "A minimalist theme with a light airy feel, site search, built-in image banners, and automatic dark and light modes."
 homepage = "https://github.com/victoriadrake/hugo-theme-quint"
 demosite = "https://quint-theme-demo.netlify.app/"
 tags = ["responsive","minimal","light","dark","personal","dark mode"]
-features = []
+features = ["dark mode","light mode","search","image banners"]
 min_version = "0.125.4"
 
 [author]
