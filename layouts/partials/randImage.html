@@ -1,0 +1,7 @@
+{{ $min := 1 }}
+<!-- Minimum number of your image filenames -->
+{{ $max := .Site.Params.numImages }}
+<!-- Maximum number of your image filenames -->
+{{ $randomNumber := (add (mul (math.Rand) (add (sub $max $min) 1)) $min) | int }}
+<!-- Generate random number within range -->
+<img src="/images/{{ $randomNumber }}.jpg" alt="{{ .Title }}">
