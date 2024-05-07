@@ -4,7 +4,9 @@
 
 Quint is a minimalist Hugo theme designed to evoke a clean, airy feel, emphasizing clarity and ease of reading. It features elegant built-in image banners and a lightweight design, making it ideal for displaying your content center stage.
 
-Check out the [demo site](https://quint-theme-demo.netlify.app/), which you can also use as a starter template for a new site. (Psst... there's a one-click deploy to Netlify button there.)
+Check out the [demo site repository](https://github.com/victoriadrake/quint-demo), which you can also use as a starter template for a new site. (Psst... there's a one-click deploy to Netlify button there.)
+
+[Live demo here](https://quint-theme-demo.netlify.app/).
 
 ## Features
 
