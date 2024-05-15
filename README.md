@@ -71,14 +71,22 @@ git submodule update --remote themes/quint
 
 ## Customizing
 
-Quint is designed to be simple to customize. Add your own custom CSS files easily by naming them in your Hugo config:
+Quint is designed to be simple to customize.
+
+### CSS
+
+Add your own custom CSS files easily by naming them in your Hugo config:
 
 ```toml
 [params]
 css = ["css/custom.css"] # Your custom CSS overrides, stored in yoursite/static/
 ```
 
-You can override any layout or style using a file of the same name in your project directory. For example, the file `yoursite/static/css/styles.css` will override `yoursite/themes/quint/static/css/styles.css`.
+### Layouts
+
+You can override any layout using a file of the same name in your project directory. For example, the file `yoursite/layouts/partials/contact.html` will override `yoursite/themes/quint/layouts/partials/contact.html`.
+
+Add or remove sections from the home page by overriding the `yoursite/themes/quint/layouts/index.html` file. Just create a copy of this file in your project directory (`yoursite/layouts/index.html`) and remove or add any `partial`s you wish.
 
 ### Image Banners
 

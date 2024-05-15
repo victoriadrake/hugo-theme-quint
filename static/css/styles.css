@@ -14,6 +14,7 @@
         --secondary-text: #fefefe;
         --link-color: #9fb1b6;
     }
+
     img {
         opacity: 90%;
     }
@@ -47,14 +48,16 @@ body {
     line-height: 1.6;
 }
 
-a, a:visited {
+a,
+a:visited {
     color: var(--link-color);
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     color: var(--primary-text);
 }
 
@@ -81,6 +84,69 @@ figcaption {
     font-size: 0.9rem;
 }
 
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: var(--primary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    margin: 10px;
+    font-size: 0.85rem;
+    color: var(--primary-text);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--shadow-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--link-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--link-color);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 15px auto;
+    background-color: var(--primary-text);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-bg);
+}
+
+::placeholder {
+    color: var(--primary-bg);
+}
+
+
 /* Navigation Styles */
 nav ul {
     display: flex;
@@ -96,6 +162,40 @@ nav ul li {
 
 nav a {
     text-decoration: none;
+}
+
+.container {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column;
+}
+
+aside.tableOfContentContainer {
+    position: webkit-sticky;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    min-width: 200px;
+    font-size: 0.9rem;
+}
+
+nav#TableOfContents li.active::before {
+    content: "\279c";
+    display: inline-block;
+    width: 20px;
+    margin-left: -20px;
+}
+
+nav#TableOfContents ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header Styles */
@@ -124,7 +224,9 @@ header .logo img {
     padding: 0 1rem;
 }
 
-.hero h1, .hero p, .hero .subtitle {
+.hero h1,
+.hero p,
+.hero .subtitle {
     margin: 0;
 }
 
@@ -141,6 +243,7 @@ header .logo img {
 
 .form-inline {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
     padding: 10px;
@@ -150,10 +253,10 @@ header .logo img {
 .form-inline input[type="text"] {
     flex-grow: 1;
     padding: 8px 12px;
-    border: 1px solid var(--primary-bg); 
+    border: 1px solid var(--primary-bg);
     border-radius: 4px;
     outline: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-inline input[type="text"]:focus {
@@ -169,7 +272,7 @@ header .logo img {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-inline button:hover {
@@ -220,6 +323,12 @@ ul.search-results li a {
     color: var(--primary-text);
 }
 
+/* Contact Section */
+.contact {
+    text-align: center;
+    margin: 5rem auto;
+}
+
 /* Post Styles */
 .post {
     padding: 0 1rem;
@@ -252,7 +361,8 @@ footer div {
     min-width: 5rem;
 }
 
-footer .social-media a, footer .social-media a svg {
+footer .social-media a,
+footer .social-media a svg {
     color: var(--link-color);
     fill: currentColor;
 }
@@ -308,6 +418,10 @@ footer .logo p {
     .blog-cards {
         grid-template-columns: 1fr;
     }
+
+    aside.tableOfContentContainer {
+        display: none;
+    }
 }
 
 @media (min-width: 641px) {
@@ -319,13 +433,14 @@ footer .logo p {
         font-size: 3rem;
     }
 
-    main {
-        max-width: 800px;
+    .container {
         margin: 3rem auto;
+        max-width: 800px;
     }
 
     .post {
-        padding: 0 5rem;
+        max-width: 800px;
+        padding: 0 2rem;
     }
 
     nav ul {
@@ -342,18 +457,19 @@ pre {
     font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
     border-radius: 8px;
     overflow-x: auto;
-}
-
-pre {
     padding: 1em;
     line-height: 1.4;
     margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 code {
     padding: 0.2em 0.4em;
 }
 
-pre {
-    transition: all 0.3s ease-in-out;
+pre,
+code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }

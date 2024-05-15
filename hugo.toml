@@ -7,6 +7,8 @@ summaryLength = 20                  # Number of characters in your card summarie
 css = ["css/custom.css"]            # Your custom CSS overrides, stored in yoursite/static/
 numImages = 10                      # Number of random images to choose from for banners (in themes/quint/static/images)
 
+contact = "You can write me an [email](mailto:me)."
+
 # [[params.social]]                 # Customize your social links below!
 #     url = "https://twitter.com"
 #     icon = "/social/twitter.svg"
