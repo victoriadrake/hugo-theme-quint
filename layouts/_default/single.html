@@ -12,6 +12,15 @@
         <div class="post">
             {{ .Content }}
         </div>
+        {{ $headingsCount := trim (partial "count-headings.html" .Content) " \n" }}
+        {{ $headingsCountInt := int $headingsCount }}
+        {{ $multiHeading := ge $headingsCount 1 }}
+        {{ if $multiHeading }}
+            <aside class="tableOfContentContainer" id="tableOfContentContainer">
+                <h3>Table of Contents</h3>
+                {{ .TableOfContents }}
+            </aside>
+        {{ end }}
     </main>
     <script>
         function adjustTextColor(sectionId) {
@@ -56,5 +65,41 @@
         }
         // Adjust the text color based on the section's background-image
         adjustTextColor('heroSection');
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    const id = entry
+                        .target
+                        .getAttribute('id');
+
+                    if (entry.intersectionRatio > 0) {
+                        clearActiveStatesInTableOfContents();
+                        document
+                            .querySelector(`nav li a[href="#${id}"]`)
+                            .parentElement
+                            .classList
+                            .add('active');
+                    }
+                });
+            });
+            document
+                .querySelectorAll('h1[id],h2[id],h3[id],h4[id]')
+                .forEach((section) => {
+                    observerForTableOfContentActiveState.observe(section);
+                });
+
+        });
+
+        function clearActiveStatesInTableOfContents() {
+            document
+                .querySelectorAll('nav li')
+                .forEach((section) => {
+                    section
+                        .classList
+                        .remove('active');
+                });
+        }
     </script>
 {{ end }}
