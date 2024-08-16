@@ -1,10 +1,10 @@
 {{ define "main" }}
     <section class="hero">
-        <h1>{{ .Title }}</h1>
+        <h1 class="p-name">{{ .Title }}</h1>
         <p class="subtitle">{{ .Params.description }}</p>
         <p>{{ .Content }}</p>
     </section>
-    <main class="container col">
+    <main class="h-entry e-content container col">
         <!-- Add or remove partials to build your home page below -->
         {{ partial "blog-cards" . }}
         {{ partial "contact" . }}
