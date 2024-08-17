@@ -361,10 +361,11 @@ footer div {
     min-width: 5rem;
 }
 
-footer .social-media a,
-footer .social-media a svg {
-    color: var(--link-color);
-    fill: currentColor;
+@media (prefers-color-scheme: dark) {
+    footer .social-media a,
+    footer .social-media a img {
+        filter: brightness(0) invert(1);
+    }
 }
 
 footer .social-media a img {

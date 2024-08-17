@@ -15,10 +15,10 @@ contact = "You can write me an [email](mailto:me)."
 #     icon = "/social/twitter.svg"
 #     name = "Twitter"
 
-# [[params.social]]
-#     url = "https://x.com"
-#     icon = "/social/x.svg"
-#     name = "X"
+[[params.social]]
+    url = "https://x.com"
+    icon = "/social/x.svg"
+    name = "X"
 
 # [[params.social]]
 #     url = "mailto:me"
