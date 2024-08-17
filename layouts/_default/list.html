@@ -5,7 +5,8 @@
     </section>
     <main class="h-entry e-content container row">
         <p>{{ .Content }}</p>
-        <ul>
+        <div class="blog-cards" id="results">
             {{ partial "blog-cards" . }}
-        </main>
-    {{ end }}
+        </div>
+    </main>
+{{ end }}

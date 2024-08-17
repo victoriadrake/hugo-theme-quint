@@ -1,12 +1,17 @@
 function displayResults(results, store) {
-    const searchResults = document.getElementById('results')
+    const searchResults = document.getElementById('results');
+    if (!searchResults) {
+        console.error('Search results container is missing in the DOM');
+        return;
+    }
     if (results.length) {
         let resultList = ''
         // Iterate and build result list elements
         for (const n in results) {
             const item = store[results[n].ref]
-            resultList += '<li><p><a href="' + item.url + '">' + item.title + '</a></p>'
-            resultList += '<p>' + item.content.substring(0, 150) + '...</p></li>'
+            console.log(item)
+            resultList += '<div class="card"><a href="' + item.url + '"><div class="text"><h2>' + item.title + '</h2>'
+            resultList += '<p class="small">' + item.content.substring(0, 150) + '...</p></a></div></div>'
         }
         searchResults.innerHTML = resultList
     } else {
