@@ -9,7 +9,6 @@ function displayResults(results, store) {
         // Iterate and build result list elements
         for (const n in results) {
             const item = store[results[n].ref]
-            console.log(item)
             resultList += '<div class="card"><a href="' + item.url + '"><div class="text"><h2>' + item.title + '</h2>'
             resultList += '<p class="small">' + item.content.substring(0, 150) + '...</p></a></div></div>'
         }
