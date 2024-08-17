@@ -1,8 +1,8 @@
 {{ $posts := where .Site.RegularPages "Section" "blog" }}
 {{ $paginator := .Paginate ($posts) }}
-<div class="blog-cards">
+<div class="blog-cards" id="results">
     {{ range .Paginator.Pages }}
-        <div class="card" id="results">
+        <div class="card">
             <a href="{{ .Permalink }}">
                 {{ with .Params.image }}
                     <img src="{{ . }}" alt="{{ $.Title }}">
