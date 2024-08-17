@@ -2,7 +2,7 @@
 {{ $paginator := .Paginate ($posts) }}
 <div class="blog-cards">
     {{ range .Paginator.Pages }}
-        <div class="card">
+        <div class="card" id="results">
             <a href="{{ .Permalink }}">
                 {{ with .Params.image }}
                     <img src="{{ . }}" alt="{{ $.Title }}">
