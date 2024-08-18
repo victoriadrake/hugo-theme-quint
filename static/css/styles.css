@@ -198,6 +198,10 @@ nav#TableOfContents ul {
     flex-direction: column;
 }
 
+.pages a.active {
+    font-weight: 1000;
+}
+
 /* Header Styles */
 header {
     display: flex;
@@ -364,12 +368,13 @@ footer div {
 @media (prefers-color-scheme: dark) {
     footer .social-media a,
     footer .social-media a img {
-        filter: brightness(0) invert(1);
+        filter: brightness(50%) invert(75%);
     }
 }
 
 footer .social-media a img {
     height: 20px;
+    padding: 0.5rem;
 }
 
 footer .logo {
