@@ -5,7 +5,7 @@
     <link href="/images/fav/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
     <link href="/images/fav/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
     <link href="/images/fav/site.webmanifest" rel="manifest"/>
-    <title>{{ .Site.Title }}</title>
+    <title>{{ if ne .Title .Site.Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
     <link href="/css/styles.css" rel="stylesheet"/>
     {{ range .Site.Params.css -}}
         <link href="/{{ . }}" rel="stylesheet"/>

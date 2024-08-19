@@ -4,13 +4,33 @@
     <section class="hero"
     style='background-image: url("{{ with .Params.image }}{{ . }}{{ else }}/images/{{ $randomNumber }}.jpg{{ end }}"); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;'
     id="heroSection" onload="adjustTextColor(this)">
-         <div>
+        <div>
             <h1 class="p-name" id="textOverlay">{{ .Title }}</h1>
         </div>
     </section>
-    <main class="post h-entry e-content container row">
+    <main class="post h-entry container row">
         <div class="post">
-            {{ .Content }}
+            <div class="post-data row">
+                <time class="dt-published" datetime="{{ .Date }}">
+                    <a class="u-url" href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }}</a>
+                </time>
+                <span rel="author" class="p-author h-card">
+                    <img class="u-photo hidden" src="{{ with $.Site.Author.image }}{{ . }}{{ else }}{{ end }}" />
+                    <span class="p-name hidden" rel="me">{{ with .Params.author }}{{ . }}{{ else }}{{ $.Site.Author.name }}{{ end }}</span>
+                </span>
+            </div>
+            <div class="e-content">
+                {{ .Content }}
+                {{ with .Params.tags }}
+                <span class="tag-container">
+                    {{ range . }}
+                    <a class="p-category tag" href="{{ "tags/" | relURL }}{{ . | urlize }}/">
+                        {{ . }}
+                    </a>&nbsp;
+                    {{ end }}
+                </span>
+                {{ end }}
+            </div>
         </div>
         {{ if .Site.Params.useToc }}
             {{ $headingsCount := trim (partial "count-headings.html" .Content) " \n" }}

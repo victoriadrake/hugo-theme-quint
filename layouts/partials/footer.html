@@ -6,7 +6,7 @@
     </div>
     <div class="logo h-card">
         <a class="u-url" href="{{ .Site.Home.Permalink }}">
-            <img alt="Site Logo" class="u-photo" src="/images/logo.png"/>
+            <img alt="Site Logo" class="site-logo u-photo" src="{{ $.Site.Params.logo | default "/images/logo.png" }}"/>
         </a>
         <p>© {{ now.Format "2006" }}
             {{ .Site.Title }}</p>

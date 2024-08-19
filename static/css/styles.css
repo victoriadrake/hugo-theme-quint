@@ -5,6 +5,7 @@
     --secondary-text: #252627;
     --link-color: #879094;
     --shadow-color: rgba(0, 0, 0, 0.15);
+    --borders: #555;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -144,6 +145,10 @@ button:hover {
 
 ::placeholder {
     color: var(--primary-bg);
+}
+
+.hidden {
+    display: none;
 }
 
 
@@ -342,13 +347,30 @@ ul.search-results li a {
     padding-left: 2rem;
 }
 
-.aff {
-    max-width: 80%;
-    font-size: 0.8rem;
-    font-style: italic;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 4rem;
+.post-data {
+    font-size: 0.9rem;
+}
+
+.tag-container {
+    display: block;
+    padding-top: 2rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    /* border: 1px solid var(--link-color); */
+    text-decoration: none;
+    margin-right: 0.25rem;
+    margin-top: 0.25rem;
+    background-color: var(--link-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag, a:visited.tag {
+    color: var(--primary-bg);
 }
 
 /* Footer Styles */
@@ -412,6 +434,102 @@ footer .logo p {
 
 .post h2 {
     margin-top: 3rem;
+}
+
+figure {
+    flex-direction: column;
+}
+
+.e-content .img-caption,
+.e-content figcaption>p {
+    text-align: center;
+    font-style: italic;
+    max-width: 800px;
+    margin: 1em auto;
+    font-size: .9em;
+    color: var(--secondary-text);
+}
+
+blockquote {
+    border-left: 3px solid var(--borders);
+    width: 70%;
+    margin: 0 auto
+}
+
+blockquote p {
+    margin-left: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em auto
+}
+
+table th {
+    font-size: .9em;
+}
+
+@media (max-width:370px) {
+    table th {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 1fr))
+    }
+}
+
+
+@media (max-width:420px) {
+    table tr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 1fr))
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em auto
+}
+
+table th {
+    font-size: .9em;
+}
+
+@media (max-width:370px) {
+    table th {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 1fr))
+    }
+}
+
+
+@media (max-width:420px) {
+    table tr {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(auto, 1fr))
+    }
+}
+
+table td,
+table th {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid var(--borders)
+}
+table td,
+table th {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid var(--borders)
+}
+
+li > code, p > code {
+    font-size: 0.9rem;
+}
+
+h2 > code {
+    font-size: inherit;
+    padding: 0;
 }
 
 /* Responsive Styles */
