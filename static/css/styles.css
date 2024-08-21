@@ -420,12 +420,12 @@ footer .logo p {
 
 /* Pagination Styles */
 .pagination {
-    min-width: 100%;
+    min-width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem;
+    padding: 1rem;
 }
 
 .pagination .pages {
