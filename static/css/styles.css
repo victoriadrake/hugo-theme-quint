@@ -162,7 +162,11 @@ nav ul {
 nav ul li {
     display: inline;
     list-style: none;
-    margin: 0.5rem;
+    margin: 0.2rem 0;
+}
+
+nav.menu ul li {
+    margin: 0 0.5rem;
 }
 
 nav a {
@@ -546,6 +550,10 @@ h2 > code {
     aside.tableOfContentContainer {
         display: none;
     }
+}
+
+.hero {
+    margin-bottom: 1rem;
 }
 
 @media (min-width: 641px) {
