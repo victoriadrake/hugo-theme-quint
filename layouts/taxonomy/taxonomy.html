@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <section class="hero">
+        <h1 class="p-name">{{ .Title }}</h1>
+        {{ partial "search.html" . }}
+    </section>
+    <main class="h-entry e-content container col">
+        <ul>
+            {{ range .Pages }}
+            {{ partial "li" . }}
+            {{ end }}
+        </ul>
+    </main>
+{{ end }}

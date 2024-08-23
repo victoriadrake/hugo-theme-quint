@@ -305,7 +305,7 @@ ul.search-results li a {
 }
 
 /* Blog Cards Styles */
-.blog-cards {
+.cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 3rem;
@@ -334,6 +334,12 @@ ul.search-results li a {
 
 .card a {
     color: var(--primary-text);
+}
+
+.blog-link, .blog-link:visited {
+    text-decoration: none !important;
+    color: var(--primary-text);
+    margin-bottom: 0
 }
 
 /* Contact Section */
@@ -375,6 +381,7 @@ ul.search-results li a {
 
 .tag, a:visited.tag {
     color: var(--primary-bg);
+    text-decoration: none !important;
 }
 
 /* Footer Styles */
@@ -543,7 +550,7 @@ h2 > code {
         text-align: center;
     }
 
-    .blog-cards {
+    .cards {
         grid-template-columns: 1fr;
     }
 
