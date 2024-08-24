@@ -1,5 +1,4 @@
-{{ $currentSection := .Section }}
-{{ $posts := where .Site.Pages "Section" $currentSection }}
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
 {{ $paginator := .Paginate ($posts) }}
 <div class="cards" id="results">
     {{ range .Paginator.Pages }}
