@@ -1,6 +1,6 @@
 {{ $paginator := .Paginator }}
 {{ if .IsHome }}
-  {{ $posts := where .Site.RegularPages "Section" "blog" }}  <!-- Assuming 'blog' is the section for posts -->
+  {{ $posts := where .Site.RegularPages "Section" "blog" }}  <!-- Assuming 'content/blog' is the section for posts -->
   {{ $paginator := .Paginate ($posts) }}
 {{ else }}
   {{ $currentSection := .Section }}
@@ -9,16 +9,16 @@
 {{ end }}
 <div class="cards" id="results">
     {{ range .Paginator.Pages }}
-        <div class="card">
-            <a href="{{ .Permalink }}">
+        <div class="card h-entry">
+            <a href="{{ .Permalink }}" class="u-url">
                 {{ with .Params.image }}
-                    <img src="{{ . }}" alt="{{ $.Title }}">
+                    <img src="{{ . }}" alt="{{ $.Title }}" class="u-photo">
                 {{ else }}
                     {{ partial "randImage" . }}
                 {{ end }}
                 <div class="text">
-                    <h2>{{ .Title }}</h2>
-                    <p class="small">{{ .Summary }}
+                    <h2 class="p-name">{{ .Title }}</h2>
+                    <p class="small e-content">{{ .Summary }}
                     </p>
                 </div>
             </a>
