@@ -10,4 +10,5 @@
     {{ range .Site.Params.css -}}
         <link href="/{{ . }}" rel="stylesheet"/>
     {{- end }}
+    {{ partial "extra_head.html" . }}
 </head>
