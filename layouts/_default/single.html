@@ -33,7 +33,7 @@
             </div>
         </div>
         {{ if .Site.Params.useToc }}
-            {{ $headingsCount := trim (partial "count-headings.html" .Content) " \n" }}
+            {{ $headingsCount := replaceRE "[^0-9]" "" (trim (partial "count-headings.html" .Content) " \n\r") }}
             {{ $headingsCountInt := int $headingsCount }}
             {{ $multiHeading := ge $headingsCount 1 }}
             {{ if $multiHeading }}
