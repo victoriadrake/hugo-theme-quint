@@ -11,7 +11,7 @@
         // You can customize your searchable fields using any .Page parameters
         "title": "{{ .Title  }}",
             "tags": [{{ range .Params.Tags }} "{{ . }}", {{ end }}],
-    "content": {{ .Content }}, // Keep HTML tags for image extraction
+    "content": {{ .Content | plainify }}, // Convert HTML to plain text and keep for image extraction
     "url": "{{ .Permalink }}",
     "image": "{{ with .Params.image }}{{ . }}{{ end }}",
     "description": "{{ with .Params.description }}{{ . }}{{ end }}"
@@ -19,7 +19,5 @@
     {{ end }}
     }
 </script>
-<!-- Include Lunr and code for your search function,
-    which you'll write in the next section -->
 <script src="/js/lunr.min.js"></script>
 <script src="/js/search.js"></script>
