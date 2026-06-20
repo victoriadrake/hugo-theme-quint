@@ -1,10 +1,10 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="/images/fav/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-    <link href="/images/fav/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-    <link href="/images/fav/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-    <link href="/images/fav/site.webmanifest" rel="manifest"/>
+    <link href="{{ `images/fav/apple-touch-icon.png` | relURL }}" rel="apple-touch-icon" sizes="180x180"/>
+    <link href="{{ `images/fav/favicon-32x32.png` | relURL }}" rel="icon" sizes="32x32" type="image/png"/>
+    <link href="{{ `images/fav/favicon-16x16.png` | relURL }}" rel="icon" sizes="16x16" type="image/png"/>
+    <link href="{{ `images/fav/site.webmanifest` | relURL }}" rel="manifest"/>
     <title>{{ if ne .Title .Site.Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
     {{/* Social & SEO metadata */}}
@@ -32,9 +32,9 @@
 
     {{ partial "schema.html" . }}
 
-    <link href="/css/styles.css" rel="stylesheet"/>
+    <link href="{{ `css/styles.css` | relURL }}" rel="stylesheet"/>
     {{ range .Site.Params.css -}}
-        <link href="/{{ . }}" rel="stylesheet"/>
+        <link href="{{ . | relURL }}" rel="stylesheet"/>
     {{- end }}
     {{ partial "extra_head.html" . }}
 </head>
