@@ -15,8 +15,8 @@
                     <a class="u-url" href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }}</a>
                 </time>
                 <span rel="author" class="p-author h-card">
-                    <img class="u-photo hidden" src="{{ with $.Site.Author.image }}{{ . }}{{ else }}{{ end }}" />
-                    <span class="p-name hidden" rel="me">{{ with .Params.author }}{{ . }}{{ else }}{{ $.Site.Author.name }}{{ end }}</span>
+                    <img class="u-photo hidden" src="{{ with site.Params.author }}{{ with .image }}{{ . }}{{ end }}{{ end }}" />
+                    <span class="p-name hidden" rel="me">{{ with .Params.author }}{{ . }}{{ else }}{{ with site.Params.author }}{{ .name }}{{ end }}{{ end }}</span>
                 </span>
             </div>
             <div class="e-content">
