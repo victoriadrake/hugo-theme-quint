@@ -1,6 +1,6 @@
 # Theme config. Your config (yoursite/hugo.toml) overrides this one.
 
-paginate = 4                        # Number of posts to show on a list page
+pagination.pagerSize = 4                        # Number of posts to show on a list page
 summaryLength = 20                  # Number of characters in your card summaries
 
 [params]
