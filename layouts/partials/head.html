@@ -6,6 +6,32 @@
     <link href="/images/fav/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
     <link href="/images/fav/site.webmanifest" rel="manifest"/>
     <title>{{ if ne .Title .Site.Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+    {{/* Social & SEO metadata */}}
+    {{- $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
+    {{- $desc := cond (ne .Description "") .Description .Site.Params.description -}}
+    {{- $ogImage := .Params.image | default .Site.Params.socialImage -}}
+    {{- with $ogImage }}{{ $ogImage = . | absURL }}{{ end -}}
+    <link href="{{ .Permalink }}" rel="canonical"/>
+    {{ with $desc }}<meta content="{{ . }}" name="description"/>{{ end }}
+
+    <!-- Open Graph -->
+    <meta content="{{ $title }}" property="og:title"/>
+    {{ with $desc }}<meta content="{{ . }}" property="og:description"/>{{ end }}
+    <meta content="{{ .Permalink }}" property="og:url"/>
+    <meta content="{{ if .IsPage }}article{{ else }}website{{ end }}" property="og:type"/>
+    <meta content="{{ .Site.Title }}" property="og:site_name"/>
+    {{ with $ogImage }}<meta content="{{ . }}" property="og:image"/>{{ end }}
+
+    <!-- Twitter Card -->
+    <meta content="{{ if $ogImage }}summary_large_image{{ else }}summary{{ end }}" name="twitter:card"/>
+    {{ with .Site.Params.twitteruser }}<meta content="@{{ . }}" name="twitter:site"/>{{ end }}
+    <meta content="{{ $title }}" name="twitter:title"/>
+    {{ with $desc }}<meta content="{{ . }}" name="twitter:description"/>{{ end }}
+    {{ with $ogImage }}<meta content="{{ . }}" name="twitter:image"/>{{ end }}
+
+    {{ partial "schema.html" . }}
+
     <link href="/css/styles.css" rel="stylesheet"/>
     {{ range .Site.Params.css -}}
         <link href="/{{ . }}" rel="stylesheet"/>
